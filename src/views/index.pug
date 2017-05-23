@@ -1,0 +1,27 @@
+extends layout.pug
+
+block content
+  
+      include ./partials/_header.pug
+      include ./partials/_form.pug
+      
+      
+      .bounds.app--body
+        .app--section--header
+          .grid-33
+            .app--section--heading
+              h2 Timeline
+          .grid-33
+            .app--section--heading
+              strong #{followers}
+              h2 followers
+          .grid-33
+            .app--section--heading
+              h2 Direct Messages
+                  
+                
+        include ./partials/_timeline.pug
+        include ./partials/_friends.pug
+        include ./partials/_msg.pug
+
+		

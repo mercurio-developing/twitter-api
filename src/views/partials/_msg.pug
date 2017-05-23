@@ -1,0 +1,15 @@
+.grid-33
+  .app--section
+    ul.app--message--list
+      li
+        h3
+          | Conversation with 
+          a 
+        ul.app--message--conversation
+          each msg in messages
+            li.app--message
+              .app--avatar
+                img(src=msg.sender.profile_image_url)
+              p.app--message--text #{msg.text}
+              p.app--message--timestamp #{msg.created_at.substring(3, 16)}
+          
