@@ -10,26 +10,26 @@ const app = express(); //function express
 		extended: false
 	}));
 
-	app.disable('etag'); // disable etag with this i resolve status 304 in localhost
+	app.disable('etag'); // I disable ETAG which resolves status 304 in localhost
 
 	app.use(express.static(__dirname + '/public')); // dir of all static files
-	app.set('view engine', 'pug'); // i set the pug render
-	app.set('views', __dirname + '/views');// i set the dir of views
+	app.set('view engine', 'pug'); // I set the pug render
+	app.set('views', __dirname + '/views');// I set the dir of views
 
 
-	app.use('/', routes);//routes is in /
+	app.use('/', routes);//Routes is in "/"
 
 	//handle errors
-	app.use((req, res, next) => { //if the status of server is 404 i render this message
+	app.use((req, res, next) => { //if the status of server is 404 I render this message
 	  const err = new Error('');
 	  err.status = 404;
-	  err.message = "UPS!, check your connection we waiting for you!.. ";
+	  err.message = "UPS!, check your connections...we waiting for you!.. ";
 	  next(err);
 	});
 	//render error in template
-	app.use((err, req, res, next) => { //if the status of server is 500 i render this message
+	app.use((err, req, res, next) => { //if the status of server is 500 I render this message
 	  res.status(err.status || 500);
-		err.message = "Talk with US APP SERVICES.. ;)";
+		err.message = "Talk with our SERVICE CENTER.. ;)";
 	  res.render('error', {
 	    message: err.message,
 	    status: err.status
