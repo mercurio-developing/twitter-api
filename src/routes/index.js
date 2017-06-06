@@ -2,8 +2,8 @@
 
 var express = require('express');//express module
 var router = express.Router(); //router is the function express router
-var Twit = require('twit') // tweeter module
-var config = require('../config.js') // token of tweeter api
+var Twit = require('twit'); // tweeter module
+var config = require('../config.js'); // token of tweeter api
 
 var T = new Twit(config); // I create new variable with keys in the module config
 
@@ -70,7 +70,7 @@ var T = new Twit(config); // I create new variable with keys in the module confi
 	});
 			setTimeout(() => { //I give the delay to the refresh because i wanna se my new status in the api.
 				res.redirect('/');
-		  }, 450)
+		  }, 450);
 	});
 
 

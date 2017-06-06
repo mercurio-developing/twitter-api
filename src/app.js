@@ -10,9 +10,9 @@ const app = express(); //function express
 		extended: false
 	}));
 
-	app.disable('etag') // disable etag with this i resolve status 304 in localhost
+	app.disable('etag'); // disable etag with this i resolve status 304 in localhost
 
-	app.use(express.static(__dirname + '/public')) // dir of all static files
+	app.use(express.static(__dirname + '/public')); // dir of all static files
 	app.set('view engine', 'pug'); // i set the pug render
 	app.set('views', __dirname + '/views');// i set the dir of views
 
@@ -37,5 +37,5 @@ const app = express(); //function express
 	});
 	//EXPRESS server
 	app.listen(8000), function(){
-		console.log('the server is ROCK ON in PORT 8000!')
-	}
+		console.log('the server is ROCK ON in PORT 8000!');
+	};
